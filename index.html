@@ -185,13 +185,16 @@
                         <span class="method-name">"Diffusion Classifier"</span>
                     </h2>
                     <p style="padding: 10px;" />
-                    <div id="method-overview-wrapper">
+                    <!-- <div id="method-overview-wrapper">
                         <img src="./static/images/arch_figure.jpg" alt="Diffusion Classifier method."
                             class="method-overview-full-img  method-overview" draggable="false" />
-                    </div>
+                    </div> -->
+                    <div id="method-overview-wrapper" w3-include-html="./figs/attn_mat_pos0.html"></div>
                             <p style="padding: 10px;" />
                         <div class="method-overview-text has-text-justified">
                             <p>
+                                This attention at postion 0 via plotly
+                                
                                 Given an input image  \(\mathbf x \) and text conditioning \(\mathbf c\),
                                 <!-- (e.g., text for Stable Diffusion or class index for DiT), -->
                                 we use a diffusion model to choose
