@@ -83,10 +83,11 @@
                         <p style="padding: 20px;" />
                         <h1 class="title is-1 publication-title">
                             <span id="main-title">
-                                Grokking
+                                Your Diffusion Model is Secretly a Zero-Shot Classifier
                             </span>
                         </h1>
-                        <!-- <div class="is-size-5 publication-authors">
+                        <div class="is-size-5 publication-authors">
+                            <!-- TODO: FIX -->
                             <span class="author-block">
                                 <a href="http://alexanderli.com/" target="_blank">Alexander C.
                                     Li</a>
@@ -111,16 +112,19 @@
                             <span class="author-block">
                                 <a href="https://www.cs.cmu.edu/~dpathak/" target="_blank">Deepak Pathak</a>
                             </span>
-                        </div> -->
-
-                        <!-- <p style="padding: 0.25rem;" />
+                        </div>
+                        <p style="padding: 0.25rem;" />
                         <div class="is-size-5 publication-authors">
                             <span class="author-block">Carnegie Mellon University</span><br>
                             <span class="author-block">ICCV 2023</span>
+                            <!-- <br style="line-height: 2px" /> -->
+                            <!-- <span class="author-block" style="font-size: 0.7em; font-style: italic;"><sup>*</sup>Equal
+                                contribution</span> -->
 
-                        </div> -->
+                        </div>
 
-                        <!-- <p style="padding: 20px;" />
+                        <p style="padding: 20px;" />
+
                         <div class="buttons is-centered">
                             <button class="external-link button is-medium is-ghost publication-links is-rounded">
                                 <a href="https://arxiv.org/abs/2303.16203" target="_blank"
@@ -139,23 +143,21 @@
                                     <span>pdf</span>
                                 </a>
                             </button>
-                            <!- - Already commented - ->
-                            <!- - <button class="external-link button is-medium is-ghost publication-links is-rounded">
+                            <!-- <button class="external-link button is-medium is-ghost publication-links is-rounded">
                                 <a href="https://youtu.be/1hYtGZ0CUSA" target="_blank">
                                     <span class="icon">
                                         <i class="fab fa-youtube"></i>
                                     </span><span>video</span>
                                 </a>
-                            </button> - ->
-                            <!- - <button class="external-link button is-medium is-ghost publication-links is-rounded">
+                            </button> -->
+                            <!-- <button class="external-link button is-medium is-ghost publication-links is-rounded">
                                 <a href="./static/docs/InternetExplorer.pptx" target="_blank">
                                     <span class="icon is-small">
                                         <i class="fas fa-file-powerpoint"></i>
                                     </span>
                                     <span>slides</span>
                                 </a>
-                            </button> - ->
-                            <!- - /Already commented - ->
+                            </button> -->
                             <button class="external-link button is-medium is-ghost publication-links is-rounded">
                                 <a href="https://github.com/diffusion-classifier/diffusion-classifier" target="_blank">
                                     <span class="icon is-small">
@@ -164,32 +166,50 @@
                                     <span>code</span>
                                 </a>
                             </button>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- <!- - hack to pull the below up vertically - ->
-    <span style="display:block; margin-top:-1.75em;"/> -->
+    <!-- hack to pull the below up vertically -->
+    <span style="display:block; margin-top:-1.75em;"/>
 
-    <!-- Method Overview -->
-    <!-- Add Transformer Image here -->
+        <!-- Method Overview -->
     <section class="section" id="method-overview">
         <div class="container is-max-widescreen">
             <div class="columns is-centered has-text-centered">
-                <div class="column" style="border-radius: 10px;"> <!-- background-color: rgb(245,245,245)"> -->
-                    <!-- <h2 class="title is-3">
+                <div class="column" style="border-radius: 10px; background-color: rgb(245,245,245)">
+                    <h2 class="title is-3">
                         <span class="method-name">"Diffusion Classifier"</span>
-                    </h2> -->
+                    </h2>
                     <p style="padding: 10px;" />
                     <div id="method-overview-wrapper">
-                        <img src="./static/images/transformer.png" alt="Transformer Architecture"
+                        <img src="./static/images/arch_figure.jpg" alt="Diffusion Classifier method."
                             class="method-overview-full-img  method-overview" draggable="false" />
                     </div>
-                            
-                    <!-- </div> -->
+                            <p style="padding: 10px;" />
+                        <div class="method-overview-text has-text-justified">
+                            <p>
+                                Given an input image  \(\mathbf x \) and text conditioning \(\mathbf c\),
+                                <!-- (e.g., text for Stable Diffusion or class index for DiT), -->
+                                we use a diffusion model to choose
+                                the class that best fits this image.
+                                Our approach, <span class="method-name">Diffusion Classifier</span>, is 
+                                theoretically motivated through the variational view of
+                                diffusion models and uses the ELBO to approximate
+                                \(\log p_{\theta}(\mathbf x|\mathbf c).\)
+                                Diffusion Classifier chooses the conditioning
+                                \(\mathbf c\)
+                                that best predicts the noise added to the input image. Diffusion Classifier can be used
+                                to extract a
+                                <i>zero-shot classifier from a text-to-image model</i> (like Stable Diffusion) and a
+                                <i>standard classifier from a class-conditional model</i> (like DiT) without any
+                                additional training.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
