@@ -40,6 +40,16 @@
         gtag('config', 'G-RYWGEJGP6S');
     </script> -->
 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script> 
+        $(function () {
+            var includes = $('[data-include]')
+            $.each(includes, function () {
+                $(this).load(file)
+            })
+        })
+    </script>
+
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
     <link rel="stylesheet" href="./static/css/bulma.min.css">
@@ -321,7 +331,7 @@
                                         };                            
                                     </script>
                                 </div> -->
-                                <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+                                <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
                                 <script> 
                                     $(function () {
                                         var includes = $('[data-include]')
@@ -329,7 +339,7 @@
                                             $(this).load(file)
                                         })
                                     })
-                                </script>
+                                </script> -->
                                 <div data-include="./plotly_plots/top2_neuron_acts_online.html"></div>
                                 <!-- <iframe src="./plotly_plots/top2_neuron_acts_online.html"></iframe> -->
                                 <div>
