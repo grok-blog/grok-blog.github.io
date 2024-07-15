@@ -309,7 +309,7 @@
                     <div class="content has-text-justified">
                         <div class="column">
                             <div class="row">
-                                <div>
+                                <!-- <div>
                                     <script type="text/javascript">window.PlotlyConfig = { MathJaxConfig: 'local' };</script>
                                     <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
                                     <div id="539432e6-b108-4136-a579-e4deacd902da" class="plotly-graph-div" style="height:100%; width:100%;"></div>
@@ -320,7 +320,17 @@
                                             })
                                         };                            
                                     </script>
-                                </div>
+                                </div> -->
+                                <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+                                <script> 
+                                    $(function () {
+                                        var includes = $('[data-include]')
+                                        $.each(includes, function () {
+                                            $(this).load(file)
+                                        })
+                                    })
+                                </script>
+                                <div data-include="./plotly_plots/top2_neuron_acts_online.html"></div>
                                 <!-- <iframe src="./plotly_plots/top2_neuron_acts_online.html"></iframe> -->
                                 <div>
                                     <script type="text/javascript">window.PlotlyConfig = { MathJaxConfig: 'local' };</script>
