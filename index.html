@@ -201,7 +201,7 @@
             <div class="columns is-centered has-text-centered">
                 <div class="column is-three-quarters">
                     <h2 class="title is-3">Model Simplifications</h2>
-                    <h3 class="title is-3">Simplifications in Attention</h3>
+                    <h4 class="title is-3">Simplifications in Attention</h4>
                     <div class="content has-text-justified">
                         <div>
                             <script type="text/javascript">window.PlotlyConfig = { MathJaxConfig: 'local' };</script>
@@ -212,7 +212,15 @@
                             </script>
                         </div>
                         <p>
-                            The attention map from positon 2 to itself is negligible. Hence we can consider
+                            From the plot, it is clear that attention map from positon 2 to itself is negligible. And, since attention map is output of softmax, attention from position 2 to 0 and attention from position 2 to 1 appaer complimentary.
+                        </p>
+                        <p class="equation">
+                            \begin{equation}
+                                (A_{2\to0}^{\mathbf(h)}, A_{2\to1}^{\mathbf(h)}, A_{2\to2}^{\mathbf(h)}) = (A_{2\to0}^{\mathbf(h)}, 1-A_{2\to1}^{\mathbf(h)}, 0) \\
+                            \end{equation}
+                        </p>
+                        <p class="equation-text">
+                            where A_{\mathbf(x)_1 \to \mathbf(x)_2}^h is attention from postion \mathbf(x)_1 to \mathbf(x)_2 at attention head \mathbf(h)
                         </p>
                     </div>
                 </div>
