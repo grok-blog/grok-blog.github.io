@@ -232,6 +232,51 @@
         </div>
     </section>
 
+    <section class="section">
+        <div class="container is-max-desktop">
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-three-quarters">
+                    <h2 class="title is-3">Key Equations</h2>
+                    <h2 class="title is-4">Derivation</h2>
+                    <div class="content has-text-justified">
+                        
+                    </div>
+                    <h2 class="title is-4">Effective Weights</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            Using the derivation above and model simplifications, we see that there are <b>3 effective weight matrices that fully determines model behaviour</b>:
+                        </p>
+                        <ul class="equation">
+                            <li>
+                                \begin{equation}
+                                W_{attn}=u^T W_Q^{hT} W_K^hW_E
+                                \end{equation}
+                            </li>
+                            <li>
+                                \begin{equation}
+                                W_{neur}=W_{in}W_O^hW_V^hW_E
+                                \end{equation}
+                            </li>
+                            <li>
+                                \begin{equation}
+                                W_{logit} = W_UW_{out}
+                                \end{equation}
+                            </li>
+                        </ul>
+                        <p>And the ouputs of these effective weights are:</p>
+                        <ul class="equation-text">
+                            <li>Attention pattern: \(A^h=\sigma(W_{attn}^h (t_0 -t_1)) \)</li>
+                            <li>Neuron activations: \(N=ReLU(\sum^3_{h=0} (A^h_0 W_{neur}^h t_0 + A^h_1 W_{neur}^h t_1)) \)</li>
+                            <li>Output Logits: \(L=W_{logit}N + bias \)</li>
+                        </ul>
+                        <p class="equation-text">Where \(t_0\) and \(t_1\) are the one-hot encoding of the input tokens \(x\) and \(y\) respectively.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
 
     <!--/ Method Overview -->
